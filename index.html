@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big B PT: Mens Personal Training</title>
+<meta name="description" content="Big B PT — men's personal training. One-on-one sessions built around your goals. Call or WhatsApp 848-367-9672. $100 per 45-minute session.">
+<style>
+  :root { --bg:#111; --panel:#1c1c1c; --gold:#d4a017; --text:#f2f2f2; --muted:#b5b5b5; --green:#2e8b57; --grey:#555; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+  a { color:var(--gold); }
+  header { padding:28px 20px 8px; text-align:center; }
+  header h1 { margin:0; font-size:2rem; letter-spacing:.06em; }
+  header p { margin:6px 0 0; color:var(--muted); }
+  .hero { text-align:center; padding:36px 20px 44px; }
+  .hero h2 { font-size:2.2rem; margin:0 0 10px; }
+  .hero .rate { font-size:1.3rem; font-weight:700; margin:14px 0; }
+  .btn { display:inline-block; margin:6px; padding:12px 22px; border-radius:8px; background:var(--gold); color:#111; font-weight:700; text-decoration:none; }
+  .btn.secondary { background:transparent; color:var(--gold); border:2px solid var(--gold); }
+  section { max-width:760px; margin:0 auto; padding:28px 20px; }
+  section h2 { border-bottom:2px solid var(--gold); padding-bottom:6px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
+  .card { background:var(--panel); border-radius:10px; padding:16px; }
+  .card h3 { margin-top:0; }
+  .photo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:14px; }
+  .photo-slot { background:var(--panel); border:2px dashed var(--grey); border-radius:10px; min-height:160px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted); padding:12px; }
+  .cal { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:14px; }
+  .month { background:var(--panel); border-radius:10px; padding:14px; }
+  .month h3 { margin:0 0 10px; text-align:center; }
+  .weekdays, .days { display:grid; grid-template-columns:repeat(7,1fr); text-align:center; gap:4px; }
+  .weekdays { color:var(--muted); font-size:.8rem; margin-bottom:6px; }
+  .day { padding:8px 0; border-radius:6px; font-size:.95rem; }
+  .day.past { color:var(--grey); }
+  .day.open { background:#233b2a; cursor:pointer; }
+  .day.open:hover { outline:2px solid var(--green); }
+  .day.blocked { background:#333; color:#999; text-decoration:line-through; }
+  .day.empty { background:transparent; }
+  .legend { font-size:.9rem; color:var(--muted); margin-top:10px; }
+  .legend span { display:inline-block; width:14px; height:14px; border-radius:4px; vertical-align:middle; margin:0 4px 0 12px; }
+  .note { background:#2a2410; border-left:4px solid var(--gold); padding:12px 14px; border-radius:6px; margin-top:16px; }
+  footer { text-align:center; color:var(--muted); padding:30px 20px 40px; font-size:.9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BIG B PT</h1>
+  <p>Mens Personal Training</p>
+</header>
+
+<div class="hero">
+  <h2>Transform Your Body. Transform Your Life.</h2>
+  <p>One-on-one personal training for men, built around your goals.</p>
+  <p class="rate">Call / WhatsApp 848-367-9672 &nbsp;·&nbsp; $100 per 45-minute session</p>
+  <p>
+    <a class="btn" href="https://wa.me/18483679672?text=Hi%20Big%20B%2C%20I%27d%20like%20to%20talk%20about%20training.">Message on WhatsApp</a>
+    <a class="btn secondary" href="tel:+18483679672">Call 848-367-9672</a>
+  </p>
+</div>
+
+<section>
+  <h2>About Big B PT</h2>
+  <p>Big B PT is men's personal training with a simple idea: training built for you. No crowded classes, no generic program — one-on-one sessions focused on your body, your goals, and steady progress that lasts.</p>
+  <div class="cards">
+    <div class="card"><h3>Personalized Training</h3><p>Every session is built around you — your level, your goals, your schedule.</p></div>
+    <div class="card"><h3>Expert Guidance</h3><p>Clear coaching on form and technique, so you train hard and train safe.</p></div>
+    <div class="card"><h3>Results That Last</h3><p>Strength, conditioning, and habits that hold up after the session ends.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Rates</h2>
+  <p><strong>$100 per 45-minute session.</strong></p>
+  <p>Questions about training or scheduling? Message on WhatsApp and ask.</p>
+</section>
+
+<section>
+  <h2>Photos</h2>
+  <p>Training photos coming soon.</p>
+  <div class="photo-grid">
+    <div class="photo-slot">Photo 1<br>coming soon</div>
+    <div class="photo-slot">Photo 2<br>coming soon</div>
+    <div class="photo-slot">Photo 3<br>coming soon</div>
+    <div class="photo-slot">Photo 4<br>coming soon</div>
+  </div>
+</section>
+
+<section>
+  <h2>Availability</h2>
+  <p>Days in green are open. Tap an open day to message about it. Days crossed out are blocked off.</p>
+  <div class="cal" id="cal"></div>
+  <p class="legend"><span style="background:#233b2a"></span>Open <span style="background:#333"></span>Blocked off</p>
+  <div class="note">Big B's schedule shifts often, so availability here can change. Message on WhatsApp to confirm your spot before you come.</div>
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>Have questions or ready to get started? Reach out and take the first step toward a stronger, healthier you.</p>
+  <p><strong>Call / WhatsApp:</strong> <a href="tel:+18483679672">848-367-9672</a><br>
+  <strong>WhatsApp:</strong> <a href="https://wa.me/18483679672">wa.me/18483679672</a><br>
+  <strong>Email:</strong> <a href="mailto:BigBPT@outlook.com">BigBPT@outlook.com</a></p>
+  <p><a class="btn" href="https://wa.me/18483679672?text=Hi%20Big%20B%2C%20I%27d%20like%20to%20talk%20about%20training.">Message on WhatsApp</a></p>
+</section>
+
+<footer>
+  Copyright © 2026 Big B PT: Mens Personal Training - All Rights Reserved.
+</footer>
+
+<script>
+  // HOW TO BLOCK OFF DAYS: add dates here as 'YYYY-MM-DD', e.g. '2026-11-15'.
+  // (Edit this file, commit, and the site updates.)
+  var blockedDates = [];
+
+  var waBase = 'https://wa.me/18483679672?text=';
+  function monthCal(year, month) {
+    var names = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var first = new Date(year, month, 1);
+    var startDay = first.getDay();
+    var daysIn = new Date(year, month + 1, 0).getDate();
+    var today = new Date(); today.setHours(0,0,0,0);
+    var html = '<div class="month"><h3>' + names[month] + ' ' + year + '</h3>';
+    html += '<div class="weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div><div class="days">';
+    for (var i = 0; i < startDay; i++) html += '<span class="day empty"></span>';
+    for (var d = 1; d <= daysIn; d++) {
+      var date = new Date(year, month, d);
+      var key = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      if (date < today) {
+        html += '<span class="day past">' + d + '</span>';
+      } else if (blockedDates.indexOf(key) !== -1) {
+        html += '<span class="day blocked" title="Blocked off">' + d + '</span>';
+      } else {
+        var msg = encodeURIComponent('Hi Big B, I saw ' + names[month] + ' ' + d + ' is open. Can we talk about training that day?');
+        html += '<a class="day open" href="' + waBase + msg + '">' + d + '</a>';
+      }
+    }
+    return html + '</div></div>';
+  }
+  (function () {
+    var now = new Date();
+    var html = monthCal(now.getFullYear(), now.getMonth());
+    var n2 = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    html += monthCal(n2.getFullYear(), n2.getMonth());
+    document.getElementById('cal').innerHTML = html;
+  })();
+</script>
+</body>
+</html>
