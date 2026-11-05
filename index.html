@@ -22,7 +22,7 @@
   header p { margin:6px 0 0; color:var(--muted); }
   .hero { position:relative; text-align:center; padding:64px 20px 56px; overflow:hidden; }
   .hero video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-  .hero .shade { position:absolute; inset:0; background:rgba(0,0,0,.62); z-index:1; }
+  .hero .shade { position:absolute; inset:0; background:rgba(0,0,0,.48); z-index:1; }
   .hero .inner { position:relative; z-index:2; }
   .hero h2 { font-size:2.3rem; margin:0 0 10px; }
   .hero .rate { font-size:1.3rem; font-weight:700; margin:14px 0; }
@@ -31,6 +31,10 @@
   .btn.ghost { background:rgba(0,0,0,.35); color:#fff; border:2px solid var(--gold); }
   section { max-width:820px; margin:0 auto; padding:28px 20px; }
   section h2 { border-bottom:2px solid var(--gold); padding-bottom:6px; }
+  /* Photo backgrounds (darkened so text stays readable) */
+  #schedule { background:linear-gradient(rgba(10,10,10,.80), rgba(10,10,10,.80)), url(bg-gym.jpg) center/cover; }
+  #availability { background:linear-gradient(rgba(10,10,10,.78), rgba(10,10,10,.78)), url(bg-pier.jpg) center/cover; }
+  #contact { background:linear-gradient(rgba(10,10,10,.80), rgba(10,10,10,.80)), url(bg-bridge.jpg) center/cover; }
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
   .card { background:var(--panel); border-radius:10px; padding:16px; }
   .card h3 { margin-top:0; }
@@ -174,7 +178,8 @@
 
 <footer>
   Copyright © 2026 Big B PT: Mens Personal Training - All Rights Reserved.<br>
-  Hero video: "Man Run and Stretching on the Suspension Bridge" by Ketut Subiyanto, via Pexels.
+  Hero video: "Man Run and Stretching on the Suspension Bridge" by Ketut Subiyanto, via Pexels.<br>
+  Photos: "Man Jogging On Treadmill At Urban Gym" by Sabina Kallari; "Man On A Pier With His Arms Raised While Stretching" and "Man Jogging Along Suspension Bridge" by Ketut Subiyanto, via Pexels.
 </footer>
 
 <script>
