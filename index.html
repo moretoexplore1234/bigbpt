@@ -33,7 +33,7 @@
   section h2 { border-bottom:2px solid var(--gold); padding-bottom:6px; }
   /* Photo backgrounds (darkened so text stays readable) */
   #schedule { background:linear-gradient(rgba(10,10,10,.80), rgba(10,10,10,.80)), url(bg-gym.jpg) center/cover; }
-  #availability { background:linear-gradient(rgba(10,10,10,.78), rgba(10,10,10,.78)), url(bg-pier.jpg) center/cover; }
+  #availability { background:linear-gradient(rgba(10,10,10,.88), rgba(10,10,10,.88)), url(logo.svg) center/520px no-repeat; }
   #contact { background:linear-gradient(rgba(10,10,10,.80), rgba(10,10,10,.80)), url(bg-bridge.jpg) center/cover; }
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:14px; }
   .card { background:var(--panel); border-radius:10px; padding:16px; }
@@ -86,7 +86,7 @@
 <body>
 
 <nav>
-  <a class="brand" href="#top">BIG B <b>PT</b></a>
+  <a class="brand" href="#top"><img src="logo.svg" alt="Big B PT — home" style="height:34px; width:auto; vertical-align:middle;"></a>
   <a class="nlink" href="#about">About</a>
   <a class="nlink" href="#schedule">Schedule</a>
   <a class="nlink" href="#availability">Availability</a>
@@ -111,6 +111,7 @@
       <a class="btn" href="#signup">Start Signup</a>
       <a class="btn ghost" href="#schedule">See Schedule</a>
       <a class="btn ghost" href="#availability">Check Availability</a>
+      <a class="btn ghost" href="rates.html">Rates</a>
     </p>
     <p>
       <a class="btn secondary" href="https://wa.me/18483679672?text=Hi%20Big%20B%2C%20I%27d%20like%20to%20talk%20about%20training.">Message on WhatsApp</a>
@@ -246,15 +247,13 @@
     document.getElementById('cal').innerHTML = html;
   })();
 
-  // ----- Signup quiz (Caliber-style, shortened for a solo trainer) -----
+  // ----- Signup quiz: 5 questions, 5 options each, then name/contact -----
   var quizSteps = [
-    { key: 'Goal', q: 'What is your primary fitness goal?', opts: ['Build muscle', 'Get leaner', 'Gain strength', 'Lose weight', 'Other'], sell: 'Your coach will design a fully customized plan for you — training, not a generic program.' },
-    { key: 'Experience', q: 'How would you classify your weight training experience?', opts: ['Beginner — never lifted, or just started', 'Intermediate — some experience with common lifts', 'Advanced — training for years, want the next level'] },
-    { key: 'Location', q: 'Where will you primarily be working out?', opts: ['At a gym', 'At home', 'Both at home and at a gym'] },
-    { key: 'Equipment', q: 'What type of equipment do you have access to?', opts: ['Full gym', 'Dumbbells at home', 'Bodyweight only', 'Other'] },
-    { key: 'Injuries', q: 'Do you have any injuries or anything Baruch should know about?', opts: ['No', 'Yes — I will explain below'], free: true, freeLabel: 'Tell us briefly (optional)' },
-    { key: 'Days per week', q: 'How frequently would you be able to work out?', opts: ['2–3 days a week', '4–5 days a week', '6–7 days a week'], sell: 'Your coach will hold you accountable and help you stay consistent — a real human coach, not an app.' },
-    { key: 'Biggest obstacle', q: 'What is the #1 biggest obstacle holding you back right now?', free: true, freeLabel: 'Give as much detail as you like (optional)' },
+    { key: 'Main goal', q: 'What is your main goal with exercise?', opts: ['Build muscle', 'Lose weight', 'Get stronger', 'Tone up and get leaner', 'Feel healthier and have more energy'], sell: 'Baruch designs a fully customized plan for you — training, not a generic program.' },
+    { key: 'Likes about exercise', q: 'What do you like about exercise?', opts: ['Lifting weights', 'Cardio and getting my heart rate up', 'The energy boost after a workout', 'Seeing progress and getting stronger', 'Training with a coach who pushes me'] },
+    { key: 'Dislikes about exercise', q: 'What do you dislike about exercise?', opts: ['It feels boring or repetitive', "I don't know what I'm doing", 'I get sore or tired', 'It is hard to stay consistent', 'I do not like crowded gyms'] },
+    { key: 'How long exercising', q: 'How long have you been exercising for?', opts: ["I'm just starting out", 'Less than a year', '1–3 years', '3–5 years', 'More than 5 years'] },
+    { key: 'Days per week', q: 'How many days a week can you train?', opts: ['2 days a week', '3 days a week', '4 days a week', '5 days a week', '6 or more days a week'] },
     { key: 'Your name', q: 'Last step — what is your name, and how should Baruch reach you?', free: true, freeLabel: 'Name and best contact (phone or email)' }
   ];
   var answers = {};
@@ -278,8 +277,8 @@
     var html = '<div class="progress">Step ' + (step + 1) + ' of ' + quizSteps.length + '</div><div class="bar"><i style="width:' + pct + '%"></i></div>'
       + '<h3>' + s.q + '</h3>';
     if (s.opts) {
-      s.opts.forEach(function (o) {
-        html += '<button class="opt" onclick="quizPick(' + JSON.stringify(o) + ')">' + o + '</button>';
+      s.opts.forEach(function (o, i) {
+        html += '<button class="opt" onclick="quizPick(' + i + ')">' + o + '</button>';
       });
     }
     if (s.free) {
@@ -290,11 +289,9 @@
     if (step > 0) html += '<div class="row"><button class="opt back" style="width:auto" onclick="quizBack()">← Back</button></div>';
     el.innerHTML = html;
   }
-  function quizPick(v) {
-    answers[quizSteps[step].key] = v;
+  function quizPick(i) {
     var s = quizSteps[step];
-    if (s.free && v.indexOf('Yes') === 0) { step++; renderQuiz(); return; }
-    if (s.free) { step++; renderQuiz(); return; }
+    answers[s.key] = s.opts[i];
     step++; renderQuiz();
   }
   function quizFree() {
