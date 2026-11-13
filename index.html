@@ -46,6 +46,12 @@
   .card { background:var(--panel); border-radius:10px; padding:16px; }
   .card h3 { margin-top:0; }
   .photo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:14px; }
+  .photo-grid img { width:100%; border-radius:10px; display:block; }
+  .photo-item { margin:0; background:var(--panel); border-radius:10px; overflow:hidden; }
+  .photo-item figcaption { padding:10px 12px; font-size:.92rem; color:var(--muted); }
+  .about-photo { margin:0 0 16px; }
+  .about-photo img { width:100%; max-width:520px; border-radius:10px; display:block; }
+  .about-photo figcaption { padding-top:8px; font-size:.92rem; color:var(--muted); }
   .photo-slot { background:var(--panel); border:2px dashed var(--grey); border-radius:10px; min-height:160px; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted); padding:12px; }
   .week { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:14px; }
   .daycard { background:var(--panel); border-radius:10px; padding:14px; text-align:center; }
@@ -142,6 +148,10 @@
   <p>BigB Personal Training offers a uniquely engaging and motivating angle to personal training. BigB (Baruch Meiselman) has set a name for himself in the Lakewood/Toms River area as a trustworthy and high quality PT, blending his own personal fitness journey experiences with his keen sense and ability to assess and internalize his clients' needs and goals, while professionally improving his clients' weaknesses and maximizing their strengths.</p>
   <p>From losing 75 lb at the age of 15, to navigating a debilitating and lingering chronic knee injury, to playing semi-professional tackle football, Baruch knows the trials and tribulations a fitness journey can put you through, and applies his personal experiences to what his clients are going through.</p>
   <p>In short, Baruch offers a unique training perspective and style unparalleled in the Frum world. Now located in the Five Towns area, BigBPT is bringing his A game to Long Island, but is selling out slots fast. Call him at +1-848-367-9672 to find a program and a rate that works for you!</p>
+  <figure class="about-photo">
+    <img src="baruch-portrait.jpg" alt="Baruch Meiselman, arms crossed in the gym">
+    <figcaption>Baruch Meiselman — that is Big BPT.</figcaption>
+  </figure>
   <div class="cards">
     <div class="card"><h3>Personalized Training</h3><p>Every session is built around you — your level, your goals, your schedule.</p></div>
     <div class="card"><h3>Expert Guidance</h3><p>Clear coaching on form and technique, so you train hard and train safe.</p></div>
@@ -168,8 +178,14 @@
   <h2>Photos</h2>
   <p>Training photos coming soon.</p>
   <div class="photo-grid">
-    <div class="photo-slot">Big B — Baruch Meiselman<br>(arms-crossed photo coming soon)</div>
-    <div class="photo-slot">Meiselman making a tackle during a Jerusalem Lions game<br>(photo coming soon)</div>
+    <figure class="photo-item">
+      <img src="baruch-portrait.jpg" alt="Baruch Meiselman, arms crossed in the gym">
+      <figcaption>Big B — Baruch Meiselman</figcaption>
+    </figure>
+    <figure class="photo-item">
+      <img src="baruch-tackle.jpg" alt="Meiselman making a tackle during a Jerusalem Lions game">
+      <figcaption>Meiselman making a tackle during a Jerusalem Lions game</figcaption>
+    </figure>
     <div class="photo-slot">Photo 3<br>coming soon</div>
     <div class="photo-slot">Photo 4<br>coming soon</div>
   </div>
@@ -180,7 +196,7 @@
   <p>Have questions or ready to get started? Reach out and take the first step toward a stronger, healthier you.</p>
   <p><strong>Call / WhatsApp:</strong> <a href="tel:+18483679672">848-367-9672</a><br>
   <strong>WhatsApp:</strong> <a href="https://wa.me/18483679672">wa.me/18483679672</a><br>
-  <strong>Email:</strong> <a href="mailto:BigBPT@outlook.com">BigBPT@outlook.com</a></p>
+  <strong>Email:</strong> <a href="mailto:baruchmeiselman@gmail.com">baruchmeiselman@gmail.com</a></p>
   <p><a class="btn" href="https://wa.me/18483679672?text=Hi%20Big%20B%2C%20I%27d%20like%20to%20talk%20about%20training.">Message on WhatsApp</a></p>
 </section>
 
